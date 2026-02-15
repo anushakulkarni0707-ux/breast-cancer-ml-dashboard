@@ -8,6 +8,16 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score,f1_sco
 
 st.title("ML Classification Model Comparison for Breast Cancer Prediction")
 
+st.subheader("Test Dataset")
+
+with open("test_data.csv", "rb") as f:
+    st.download_button(
+        label="Download sample test CSV",
+        data=f,
+        file_name="test_data.csv",
+        mime="text/csv"
+    )
+
 file = st.file_uploader("Upload Test CSV", type=["csv"])
 
 if file is not None:
